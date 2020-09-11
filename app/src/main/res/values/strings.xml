@@ -2,6 +2,9 @@
     <string name="app_name">Peoples</string>
 
     <string name="title_save">Сохранить</string>
+    <string name="title_edit">Редактировать</string>
+
+    <string name="menu_update">Обновить с сервера</string>
 
     <string name="people_deleted">People is deleted</string>
     <string name="people_saved">People is saved</string>

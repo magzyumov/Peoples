@@ -33,6 +33,7 @@ class ListFragment: BaseFragment(), PeoplesAdapter.Interaction {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
 
         fragmentWorker.changePageTitle(getString(R.string.app_name))
 
@@ -88,6 +89,19 @@ class ListFragment: BaseFragment(), PeoplesAdapter.Interaction {
         val navDirection = ListFragmentDirections.actionListFragmentToEditFragment(item)
         findNavController().navigate(navDirection)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.menuActionUpdate -> {mainViewModel.getPeoplesFromServer()}
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 
 
 }

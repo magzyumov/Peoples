@@ -3,9 +3,14 @@ package ru.magzyumov.peoples.ui.fragments
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_edit.*
+import kotlinx.android.synthetic.main.item_person.buttonSave
+import kotlinx.android.synthetic.main.item_person.editTextEmail
+import kotlinx.android.synthetic.main.item_person.editTextFirstName
+import kotlinx.android.synthetic.main.item_person.editTextLastName
 import ru.magzyumov.peoples.App
 import ru.magzyumov.peoples.R
 import ru.magzyumov.peoples.data.entity.PeopleEntity
+import ru.magzyumov.peoples.ui.adapter.PeoplesAdapter
 import ru.magzyumov.peoples.ui.base.BaseFragment
 
 
@@ -18,12 +23,13 @@ class EditFragment: BaseFragment() {
         App.getComponent().inject(this@EditFragment)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         prepareSafeArgs()
 
-        buttonEdit.setOnClickListener {
+        buttonSave.setOnClickListener {
             fragmentWorker.returnFragment()
         }
     }
@@ -32,9 +38,11 @@ class EditFragment: BaseFragment() {
         arguments?.let {
             safeArgs = EditFragmentArgs.fromBundle( it )
             val people = safeArgs.people
-            editTextEmail.setText(people.email)
-            editTextLastName.setText(people.last_name)
             editTextFirstName.setText(people.first_name)
+            editTextLastName.setText(people.last_name)
+            editTextEmail.setText(people.email)
+            people.avatar?.let { avatar -> PeoplesAdapter.loadImage(imageViewAvatar, avatar) }
+
             fragmentWorker.changePageTitle("${people.first_name} ${people.last_name}")
         }
     }

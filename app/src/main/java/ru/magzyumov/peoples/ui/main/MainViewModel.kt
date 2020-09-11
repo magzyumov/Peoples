@@ -12,10 +12,8 @@ class MainViewModel
     private val peoplesRepository: PeoplesRepository
 ): ViewModel() {
 
-
-    fun getPeoplesFromServer(): LiveData<List<PeopleEntity>>{
+    fun getPeoplesFromServer(){
         peoplesRepository.getAllPeoples()
-        return peoplesRepository.getListOfPeoples()
     }
 
     fun getPeoplesFromDB(): LiveData<List<PeopleEntity>>{

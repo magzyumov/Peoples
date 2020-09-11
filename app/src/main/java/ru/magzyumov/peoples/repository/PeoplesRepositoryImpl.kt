@@ -20,11 +20,8 @@ class PeoplesRepositoryImpl @Inject constructor(
     private val peoplesRequest: PeoplesRequest
 ): PeoplesRepository {
     private val netWorkStatusLiveData: MutableLiveData<String> = MutableLiveData()
-    private val listOfPeoplesLiveData: MutableLiveData<List<PeopleEntity>> = MutableLiveData()
 
     override fun getNetworkStatus(): LiveData<String> = netWorkStatusLiveData
-    override fun getListOfPeoples(): LiveData<List<PeopleEntity>> = listOfPeoplesLiveData
-
 
     override fun insertPeoples(peoples: List<PeopleEntity>) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -56,7 +53,6 @@ class PeoplesRepositoryImpl @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object: DisposableSingleObserver<List<PeopleEntity>>() {
                 override fun onSuccess(peoples: List<PeopleEntity>) {
-                    listOfPeoplesLiveData.postValue(peoples)
                     insertPeoples(peoples)
                 }
                 override fun onError(e: Throwable) {

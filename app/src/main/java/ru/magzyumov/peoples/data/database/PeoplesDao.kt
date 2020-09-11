@@ -9,9 +9,6 @@ import ru.magzyumov.peoples.data.entity.PeopleEntity
 interface PeoplesDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertPeople(people: PeopleEntity)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertPeoples(peoples: List<PeopleEntity>)
 
     @Query("SELECT * FROM peoples")

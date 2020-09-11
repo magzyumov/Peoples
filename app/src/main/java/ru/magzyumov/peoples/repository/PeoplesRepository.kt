@@ -7,7 +7,6 @@ import ru.magzyumov.peoples.data.entity.PeopleEntity
 interface PeoplesRepository {
 
     fun getNetworkStatus(): LiveData<String>
-    fun getListOfPeoples(): LiveData<List<PeopleEntity>>
 
     fun getAllPeoples()
 
