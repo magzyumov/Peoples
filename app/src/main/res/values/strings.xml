@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Peoples</string>
+
+    <string name="title_save">Сохранить</string>
+
+    <string name="people_deleted">People is deleted</string>
+    <string name="people_saved">People is saved</string>
+    <string name="people_discarded">Changes is discarded</string>
+
+    <string name="hint_first_name">First name</string>
+    <string name="hint_last_name">Last name</string>
+    <string name="hint_email">Email</string>
+
+</resources>

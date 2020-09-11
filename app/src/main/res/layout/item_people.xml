@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="people"
+            type="ru.magzyumov.peoples.data.entity.PeopleEntity" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/itemCardViewMargin"
+        app:cardCornerRadius="@dimen/itemCardViewCornerRadius"
+        app:cardBackgroundColor="@color/colorWhite">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/itemTextViewMarginStart"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageViewAvatar"
+                android:layout_gravity="center"
+                android:layout_width="@dimen/itemAvatarRadius"
+                android:layout_height="@dimen/itemAvatarRadius"
+                app:avatar="@{people.avatar}"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/itemTextViewMarginStart"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/itemTextViewMargin"
+                    android:text="@{people.first_name + ' ' + people.last_name}" />
+
+                <TextView
+                    android:id="@+id/textViewLastName"
+                    style="@style/TextAppearance.AppCompat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/itemTextViewMargin"
+                    android:text="@{people.email}" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+</layout>
+

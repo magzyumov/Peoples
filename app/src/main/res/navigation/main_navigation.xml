@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/listFragment">
+
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="ru.magzyumov.peoples.ui.fragments.ListFragment"
+        android:label="ListFragment" >
+        <action
+            android:id="@+id/action_listFragment_to_editFragment"
+            app:destination="@id/editFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/editFragment"
+        android:name="ru.magzyumov.peoples.ui.fragments.EditFragment"
+        android:label="EditFragment" >
+        <argument
+            android:name="people"
+            app:argType="ru.magzyumov.peoples.data.entity.PeopleEntity" />
+    </fragment>
+
+</navigation>
