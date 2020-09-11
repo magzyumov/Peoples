@@ -7,6 +7,7 @@ import android.os.Bundle
 
 import android.view.*
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,7 @@ import ru.magzyumov.peoples.App
 import ru.magzyumov.peoples.R
 import ru.magzyumov.peoples.data.entity.PeopleEntity
 import ru.magzyumov.peoples.ui.base.BaseFragment
+import javax.inject.Inject
 
 
 class ListFragment: BaseFragment(), PeoplesAdapter.Interaction {
@@ -101,7 +103,4 @@ class ListFragment: BaseFragment(), PeoplesAdapter.Interaction {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-
 }

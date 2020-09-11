@@ -3,10 +3,6 @@ package ru.magzyumov.peoples.ui.fragments
 import android.os.Bundle
 import android.view.View
 import kotlinx.android.synthetic.main.fragment_edit.*
-import kotlinx.android.synthetic.main.item_person.buttonSave
-import kotlinx.android.synthetic.main.item_person.editTextEmail
-import kotlinx.android.synthetic.main.item_person.editTextFirstName
-import kotlinx.android.synthetic.main.item_person.editTextLastName
 import ru.magzyumov.peoples.App
 import ru.magzyumov.peoples.R
 import ru.magzyumov.peoples.data.entity.PeopleEntity

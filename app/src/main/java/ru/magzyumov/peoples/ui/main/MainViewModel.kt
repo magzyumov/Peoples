@@ -27,4 +27,8 @@ class MainViewModel
     fun updatePeople(people: PeopleEntity) {
         peoplesRepository.updatePeople(people)
     }
+
+    fun getNetWorkStatus(): LiveData<String>{
+        return peoplesRepository.getNetworkStatus()
+    }
 }

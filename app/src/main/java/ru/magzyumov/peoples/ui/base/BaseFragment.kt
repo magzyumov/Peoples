@@ -11,6 +11,7 @@ import ru.magzyumov.peoples.ui.main.MainViewModel
 import javax.inject.Inject
 
 abstract class BaseFragment: Fragment() {
+
     @Inject
     lateinit var mainViewModel: MainViewModel
 
@@ -31,10 +32,4 @@ abstract class BaseFragment: Fragment() {
         return inflater.inflate(layoutRes, container, false)
     }
 
-
-    protected fun renderError(error: Throwable?) {
-        error?.message?.let { message ->
-            fragmentWorker.showMessage(message)
-        }
-    }
 }
